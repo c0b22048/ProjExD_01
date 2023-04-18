@@ -8,8 +8,10 @@ def main():
     bg_img = pg.image.load("ex01/fig/pg_bg.jpg")
     kk_img01 = pg.image.load("ex01/fig/3.png")
     kk_img01 = pg.transform.flip(kk_img01,True,False)
-    kk_img02 = pg.transform.rotozoom(kk_img01,10,1.0)
-    kk_imgs = [kk_img01,kk_img02]
+    kk_img02 = pg.transform.rotozoom(kk_img01,3,1.0)
+    kk_img03 = pg.transform.rotozoom(kk_img02,7,1.0)
+    kk_img04 = pg.transform.rotozoom(kk_img02,10,1.0)
+    kk_imgs = [kk_img01,kk_img02,kk_img03,kk_img04]
 
     tmr = 0
     x = 0
@@ -25,15 +27,22 @@ def main():
         screen.blit(bg_img, [1600-x,0])
         if x==1599:
             x=0
-        if tmr%2 == 0:
+        if tmr%6 == 0:
             screen.blit(kk_imgs[0],[300,200])
-        else:
+        elif tmr%6 == 1:
             screen.blit(kk_imgs[1],[300,200])
-
-        #screen.blit(kk_img,[300,200])
+        elif tmr%6 == 2:
+            screen.blit(kk_imgs[2],[300,200])
+        elif tmr%6 == 3:
+            screen.blit(kk_imgs[3],[300,200])
+        elif tmr%6 == 4:
+            screen.blit(kk_imgs[2],[300,200])
+        elif tmr%6 == 5:
+            screen.blit(kk_imgs[1],[300,200])
+        
         pg.display.update()
 
-        clock.tick(100)
+        clock.tick(50)
         print(tmr)
 
 
