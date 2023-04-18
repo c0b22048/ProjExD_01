@@ -9,10 +9,7 @@ def main():
     bg_img02 = pg.transform.flip(bg_img01,True,False)
     kk_img01 = pg.image.load("ex01/fig/3.png")
     kk_img01 = pg.transform.flip(kk_img01,True,False)
-    kk_img02 = pg.transform.rotozoom(kk_img01,3,1.0)
-    kk_img03 = pg.transform.rotozoom(kk_img02,7,1.0)
-    kk_img04 = pg.transform.rotozoom(kk_img02,10,1.0)
-    kk_imgs = [kk_img01,kk_img02,kk_img03,kk_img04]
+    kk_imgs = [kk_img01,kk_img02]
 
     tmr = 0
 
