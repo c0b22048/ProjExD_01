@@ -6,13 +6,17 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("ex01/fig/pg_bg.jpg")
-    kk_img = pg.image.load("ex01/fig/3.png")
+    kk_img01 = pg.image.load("ex01/fig/3.png")
+    kk_img01 = pg.transform.flip(kk_img01,True,False)
+    kk_ing02 = pg.transform.rotozoom(kk_img01,10,1.0)
+    kk_imgs = [kk_img01,kk_ing02]
+
     tmr = 0
 
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-
+        
         tmr += 1
         screen.blit(bg_img, [0, 0])
         #screen.blit(kk_img,[300,200])
